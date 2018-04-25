@@ -1,0 +1,21 @@
+{
+  "name": "calendar",
+  "version": "1.0.0",
+  "description": "calendrier on javascript",
+  "main": "app.js",
+  "scripts": {
+    "start": "nodeman app.js"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.16.3",
+    "nodeman": "^1.1.2"
+  },
+  "nodemanConfig": {
+    "ignore": [
+      "node_modules/**/node_modules"
+    ],
+    "delai": "2500"
+  }
+}
