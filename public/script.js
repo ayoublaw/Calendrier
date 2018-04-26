@@ -156,3 +156,9 @@ function prevWeek(){
 	d = new Date(res);
 	calendrier(d,$);
 }
+
+var span = document.getElementsByClassName("close")[0];
+span.onclick = function() 
+{
+  modal.style.display = "none";
+}
