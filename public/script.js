@@ -17,8 +17,9 @@ var moi = new Array("Janvier", "Février", "Mars", "Avril", "Mai", "Juin", "Juil
 
 
 //var j=0;
-var d = new Date;
 
+var d = new Date;
+d.setDate(d.getDate()-d.getDay());
  var i;
     let j;
     let x;
