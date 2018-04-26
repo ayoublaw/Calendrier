@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang='en'>
+<head>
+    <meta charset="UTF-8" /> 
+    <title>
+        HTML Document Structure
+    </title>
+    <link rel="stylesheet" type="text/css" href="/public/style-register.css" />
+	
+</head>
+<body>
+
+
+
+
+<form  method="post" >
+  <h1>INSCRIPTION</h1>
+  <div class="inset">
+    <p>
+    <label for="nom">LOGIN</label>
+    <input type="text" name="login" id="login"  placeholder="Login" value="{{user.login}}" >
+  </p>
+  <p>
+    <label for="password">PASSWORD</label>
+    <input type="password" name="passe" id="password" placeholder="**********" value="{{user.password}}">
+  </p>
+
+
+  </div>
+  <p class="p-container">
+    <input type="submit" name="go" id="go" value="CONIRME" >
+  </p>
+</form>
+    {% if message %}
+<p>{{message}}</p>
+{% endif %}
+</body>
+</html>

@@ -4,13 +4,18 @@
   "description": "calendrier on javascript",
   "main": "app.js",
   "scripts": {
-    "start": "nodeman app.js"
+    "start": "node app.js"
   },
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "body-parser": "^1.18.2",
     "express": "^4.16.3",
-    "nodeman": "^1.1.2"
+    "express-session": "^1.15.6",
+    "knex": "^0.14.6",
+    "mysql": "^2.15.0",
+    "nodeman": "^1.1.2",
+    "nunjucks": "^3.1.2"
   },
   "nodemanConfig": {
     "ignore": [
