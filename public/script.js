@@ -162,4 +162,7 @@ var span = document.getElementsByClassName("close")[0];
 span.onclick = function() 
 {
   modal.style.display = "none";
+  tab[tabi][tabj].className='evenement';
+    console.log("row",event.target.dataset.row);
+    
 }
