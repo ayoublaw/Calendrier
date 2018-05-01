@@ -99,3 +99,9 @@ input[type=text]:hover,
 input[type=password]:hover {
  	background:#27292c;
 }
+#msg{
+    font-size:20px;
+     color:red;
+     font-style:Blippo;
+     text-align:center;
+}

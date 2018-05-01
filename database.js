@@ -35,7 +35,6 @@ async function init_events()
   await knex.schema.createTable('event',function (table){
       table.increments('id');
       table.string('titre',255);
-      table.string('createur',255);
       table.time('heuredebut');
       table.time('heurefin');
       table.date('datedebut');
@@ -43,6 +42,8 @@ async function init_events()
       table.integer('ligne');
       table.integer('row');
       table.string('login_user');
+      table.string('calendername');
+      table.unique(['heuredebut','heurefin','datedebut','datefin']);
       table.foreign('login_user').references('users.login');
   });
   //Nous récupérons les informations sur chaque colonne de notre BD et on l'affiche avec console.log pour les evenements

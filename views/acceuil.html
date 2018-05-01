@@ -17,42 +17,42 @@
 				
 			</form>
 		</div>
+        
+		<div id="demo"></div>
 		
-		
-		
-		
-<div id='bout'>
-  
-  <button id='prev'> <<<< </button> 
-  
-  <button  id="next" > >>>> </button>
+       <div id='bout'>
+          <button id='prev'> <<<< </button> 
+          <button  id="next" > >>>> </button>
+        </div>
 
-</div>
-
-	<div id='dete'></div>	
+       <div id='dete'></div>	
 		
 		
-		<div id="calendar" ondragstart="drag_start(event)" ondrop="drop(event)" ondragover="drag_over(event)"></div>
-		
-		
-
-	<div  id="myModal" class="modal">
-	 <span class="close">&times;</span>
-	<form name="evenn" action="index.html" onsubmit="self.refresh()">
+       <div id="calendar" ></div>
+		  
+       <div  id="myModal" class="modal">
+	   <span class="close">&times;</span>
 				<h2>Entrer un evenement</h2>
 				<p>Description</p>
-				<TEXTAREA id="area" > </TEXTAREA>
+				<TEXTAREA id="area" name="titre"> </TEXTAREA>
 				<p>Date</p>
 				<input type="date" id="datte" name="date" >
 				<p>Heure Debut   &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Heure Fin</p>
 				&nbsp;&nbsp;&nbsp;
-				<input type="time" id="datedeb" name="datedeb" style="width:68px"  >
+				<input type="time" id="datedeb" name="heuredebut" style="width:68px"  >
 				&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-				<input type="time" id="datefin" name="datefin" style="width:68px">
-				<input type="submit"  id="ok" value="enregistre">
-				
-			</form>
-	</div>
-			<script type="text/javascript" src="/public/script.js"></script>
-	</body>
+				<input type="time" id="datefin" name="heurefin" style="width:68px">        
+                <input type="number" id="row" name="row" hidden>
+                <input type="number" id="ligne" name="ligne" hidden>   
+                <input type="submit"  id="ok" value="enregistre" onclick="AjouterEvent()" >
+
+       </div>
+
+        
+       <script type="text/javascript" src="/public/script.js"></script>
+       <script>
+        
+        </script>
+	
+    </body>
 </html>

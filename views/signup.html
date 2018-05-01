@@ -30,9 +30,10 @@
   <p class="p-container">
     <input type="submit" name="go" id="go" value="CONIRME" >
   </p>
-</form>
-    {% if message %}
-<p>{{message}}</p>
+     {% if message %}
+<p id="msg">{{message}}</p>
 {% endif %}
+</form>
+   
 </body>
 </html>

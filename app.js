@@ -53,7 +53,7 @@ app.post('/signup',async function(req,res){
     }
     try {
     if (user.login && user.password &&  await knex('users').whereNot({login:user.login}).insert(user)) {
-     
+      req.session.user=user;
       res.redirect('/');
     } else {
       res.render('signup.html', { user: user, message: 'saisie login et Mot de passe' });
@@ -99,7 +99,32 @@ app.get('/signout',function(req,res){
    req.session.user = null;
     res.redirect('/');
 });
-
+app.post('/ajouter',async function(req,res){
+   var event = {
+       titre : req.body.titre,
+       heuredebut : req.body.heuredebut,
+       heurefin : req.body.heurefin,
+       datedebut : req.body.date,
+       datefin : req.body.date,
+       ligne : req.body.ligne,
+       row : req.body.row,
+       login_user : req.session.user.login,
+   };
+    console.log(event);
+    try{
+    if (event.titre &&  await knex('event').insert(event)) {
+      res.status(200).send("Succes");
+    } else {
+      res.send("Saisie tous les champs");
+    }
+    }catch(err){
+        if(err.code == "ER_DUP_ENTRY"){
+            res.send('Erreur : Evenement déjà remplie');
+        }
+      res.send("Erreur")
+    }
+    
+});
 var listener = app.listen(80, function () {
   console.log('application est en cours sur PORT ' + listener.address().port);
 });
