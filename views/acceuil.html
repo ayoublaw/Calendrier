@@ -22,19 +22,21 @@
 		
        <div id='bout'>
           <button id='prev'> <<<< </button> 
-          <button  id="next" > >>>> </button>
+          <button  id='next' > >>>> </button>
         </div>
 
+        <!-- balise pour affichage de mois et l'annee  -->
        <div id='dete'></div>	
 		
-		
+		<!-- balise pour affichage de calendrier -->
        <div id="calendar" ></div>
 		  
+        <!-- balise pour affichage de formulaire d'ajout -->
        <div  id="myModal" class="modal">
 	   <span class="close">&times;</span>
 				<h2>Entrer un evenement</h2>
 				<p>Description</p>
-				<TEXTAREA id="area" name="titre"> </TEXTAREA>
+				<TEXTAREA id="area" name="titre" required> </TEXTAREA>
 				<p>Date</p>
 				<input type="date" id="datte" name="date" >
 				<p>Heure Debut   &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Heure Fin</p>
@@ -44,15 +46,41 @@
 				<input type="time" id="datefin" name="heurefin" style="width:68px">        
                 <input type="number" id="row" name="row" hidden>
                 <input type="number" id="ligne" name="ligne" hidden>   
-                <input type="submit"  id="ok" value="enregistre" onclick="AjouterEvent()" >
+                <input type="submit"  id="ok" value="enregistre" onclick="AjouterEvent()" disabled>
 
        </div>
+       	<!-- balise pour affichage de formulaire de modification -->
+        <div  id="myModal2" class="modal2">
+       <span class="close" id="close">&times;</span>
+                <h2>Entrer un evenement</h2>
+                <p>Description</p>
+                <TEXTAREA id="area2" name="titre2" required disabled > </TEXTAREA>
+                <p>Date</p>
+                <input type="date" id="datte2" name="date2" disabled>
+                <p>Heure Debut   &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Heure Fin</p>
+                &nbsp;&nbsp;&nbsp;
+                <input type="time" id="datedeb2" name="heuredebut2" style="width:68px"  disabled>
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                <input type="time" id="datefin2" name="heurefin2" style="width:68px" disabled>        
+               <input type="number" id="row2" name="row2" hidden>
+               <input type="number" id="ligne2" name="ligne2" hidden>  
+                
+                <div id='modiff'><button  id="modif" onclick="Modificationevent()" ></button></div>
+                <div id='corbb'><button  id="corb" onclick="SuppressionConfirmation()"></button></div>
+
+      </div>
 
         
-       <script type="text/javascript" src="/public/script.js"></script>
        <script>
-        
+           var name = "{{name}}";
+           var userLogin = "{{user.login}}"
+           var ModifactionAccess = "{{user.Modification}}"
+           var SuppressionAccess = "{{user.Suppression}}"
+           var Administrationuser = "{{user.administration}}"
+           {% if user.Creation or user.administration %}
+             document.getElementById("ok").disabled = false;
+           {% endif %}
         </script>
-	
+	       <script type="text/javascript" src="/public/script.js"></script>
     </body>
 </html>

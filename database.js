@@ -16,7 +16,11 @@ async function init_users()
   //création de la table user avec utilisation de raw SQL
   await knex.raw(`CREATE TABLE users(
   login VARCHAR(255) PRIMARY KEY NOT NULL,
-  password VARCHAR(30) NOT NULL)`);
+  password VARCHAR(30) NOT NULL,
+  administration BOOLEAN NOT NULL,
+  Creation BOOLEAN NOT NULL,
+  Modification BOOLEAN NOT NULL,
+  Suppression BOOLEAN NOT NULL)`);
 
 //Nous récupérons les informations sur chaque colonne de notre BD et on l'affiche avec console.log pour les utilisateurs
   var cols = await knex('users').columnInfo();
@@ -24,6 +28,16 @@ async function init_users()
   //Nous récupérons les informations sur chaque lignes(tuples) de notre BD et on l'affiche avec console.log pour les utilisateurs
   var rows = await knex('users');
   console.log('Rows:', rows);
+  
+  var user = {
+        login : 'admin',
+        password : '12345',
+        administration : true,
+        Creation : true,
+        Modification : true,
+        Suppression : true  
+    }
+  await knex('users').whereNot({login:user.login}).insert(user)    
   
 }
 
@@ -43,7 +57,8 @@ async function init_events()
       table.integer('row');
       table.string('login_user');
       table.string('calendername');
-      table.unique(['heuredebut','heurefin','datedebut','datefin']);
+      table.integer('nombredeCarre');
+      table.unique(['heuredebut','heurefin','datedebut','datefin','calendername']);
       table.foreign('login_user').references('users.login');
   });
   //Nous récupérons les informations sur chaque colonne de notre BD et on l'affiche avec console.log pour les evenements

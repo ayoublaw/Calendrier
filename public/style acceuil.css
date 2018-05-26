@@ -249,3 +249,146 @@ text-align:center;}
 #calendar td.clic{  
   background-color: blue;
 }
+#corbb{
+position: absolute;
+ top: 350px;
+ left: 200px;
+
+}
+
+#corb
+{
+height:60px;
+width:60px;
+
+ box-shadow:
+ inset 0 1px 0 rgba(255,255,255,0.3),
+ inset 0 10px 10px rgba(110, 113, 119,0.5);
+ border-radius:0.5em;
+
+ cursor:pointer;
+
+ background: url(/public/corb.png);
+ background-size:100% ;
+ background-repeat: no-repeat;
+}
+
+
+#modiff{
+position: absolute;
+ top: 350px;
+ left: 60px;
+
+}
+
+#modif{
+height:60px;
+width:60px;
+
+ box-shadow:
+ inset 0 1px 0 rgba(255,255,255,0.3),
+ inset 0 10px 10px rgba(110, 113, 119,0.5);
+ border-radius:0.5em;
+
+ cursor:pointer;
+
+ background: url(/public/modif.png);
+ background-size:100% ;
+ background-repeat: no-repeat;
+}
+
+
+.modal2  h2
+{
+
+    color: white;
+    text-align: center;
+}
+
+.modal2 p
+{
+    margin: 0;
+    padding: 0;
+    font-weight: bold;
+    color: #fff;
+    text-align:center;
+}
+
+.modal2 input
+{
+    
+    margin-bottom: 20px;
+}
+
+.modal2 input[type="date"]
+{margin-left:70px;
+text-align:center;}
+.modal2 input[type="time"]
+{margin-left:10px;
+font-size:bold;
+text-align:center;}
+
+.modal2{
+display: none; /* Hidden by default */
+   position: fixed; /* Stay in place */
+   z-index: 1; /* Sit on top */
+ 
+ 
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    width: 320px;
+    height: 430px;
+    padding: 10px 20px;
+    box-sizing: border-box;
+    background:#111;
+
+  border-radius:0.4em;
+ border:1px solid #191919;
+
+
+ box-shadow: 0 5px 10px 5px rgba(0,0,0,0.2);
+}
+
+.submit input[type="submit"]
+{
+ position: absolute;
+ top: 10px;
+ left: 1300px;
+ padding:10px 30px;
+ border:1px solid rgba(0,0,0,0.4);
+ text-shadow:0 -1px 0 rgba(0,0,0,0.4);
+ box-shadow:
+ inset 0 1px 0 rgba(255,255,255,0.3),
+ inset 0 10px 10px rgba(110, 113, 119,0.5);
+ border-radius:0.5em;
+ background:BLACK;
+ color:white;
+ font-weight:bold;
+ cursor:pointer;
+ font-size:25px;
+
+}
+
+.Erreur {
+    width: 30%;
+    border-radius: 0.5em;
+    padding: 20px;
+    background-color: #f44336;
+    color: white;
+    font-size:25px;
+    font-weight:bold;
+
+}
+.Succes {
+    width: 30%;
+    border-radius: 0.5em;
+    padding: 20px;
+    background-color: green;
+    color: white;
+    font-size:25px;
+    font-weight:bold;
+
+
+
+}

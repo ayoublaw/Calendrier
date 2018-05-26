@@ -1,0 +1,67 @@
+body
+{
+
+
+	font-family: 'Lato', Calibri, Arial, sans-serif;
+    color: #005C97;
+
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+	margin: 0;
+	padding: 0;
+	background: url(back.jpg);
+	background-size: cover;
+	font-family: sans-serif;
+	margin-top :1%;s-serif;
+	margin-top :1%;
+
+	}
+	
+	
+	
+	
+	
+#tableUser{
+	
+
+	width:1018px;
+	height : auto;
+	margin-top:100px;
+  margin-left:auto;
+  margin-right: auto;
+}
+
+
+#tableUser th{
+background-color: white;
+color:black;
+width:100px;
+height : 30px;
+border:3px solid gray;
+text-align:center;
+font-weight:bold;
+ }
+ 
+ #tableUser tr td{
+
+  width:100px;
+  height : 30px;
+  background-color: black;
+  border:3px solid gray;
+  text-align:center;
+  color:white;
+  font-weight:bold;
+}
+#good{
+  width:20px;
+  height : 20px;
+  cursor: pointer;
+}
+ 
+ #bad{
+  width:20px;
+  height : 20px;
+  cursor: pointer;
+}
