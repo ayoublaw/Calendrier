@@ -1,4 +1,11 @@
 ## **Projet AWS " *Calendrier de gestion d’événements *"**
+|***Fait par : *MOUHRI AYOUB*  et *METALLAOUI RABAH AKRAM**** 
+|------------------------------------------------------------|
+|                                                           
+
+
+
+
 
 **La structure de notre projet est la suivante:**
 
@@ -21,7 +28,7 @@
 		Route /signin : (POST ET GET) permettant de créer un nouvel utilisateur(POST ET GET). Redirige vers / après une inscription réussie.
 		Route /signup : (POST ET GET) permettant de se connecter. Redirige vers / après un login réussi.
 		Route /signout : (GET) permettant de se déconnecter. Redirige vers / après un signout réussi.
-		Route /ChargeSemaine : (GET) permettant de remplir les dates au niveau du calendrier lorsque l'utilisateur veut se positionner sur la semaine suivante ou précédente relativement à la semaine ou il se trouve , il renvoit la liste des événements au format JSON (Par AJAX).
+		Route /ChargeSemaine : (GET) permettant de remplir les dates au niveau du calendrier lorsque l'utilisateur veut se positionner sur la semaine suivante ou précédente relativement à la semaine ou il se trouve , il renvoi la liste des événements au format JSON ( **#AJAX**).
         Route /ajouter : (POST) permettant d’ajouter un événement, retourne succée si l'ajout est réussis, erreur le cas contraire **#AJAX**
 		Route /modifier : (POST) permettant de modifier un événement . retourne succeé si la modification est réussite, erreur le cas contraire **#AJAX**
 		Route /supprimer : (POST) permettant de supprimer un événement ,retourne succeé si la suppression est réussite, erreur le cas contraire **#AJAX**
@@ -66,6 +73,6 @@ Une fois l'événement créé vous pouvez le visualiser sur le tableau automatiq
  - **Pour supprimer** un événement vous pouvez cliquer sur le boutton supprimer(image supprimer), seul le créateur de l'événement a le   
    droit de le supprimer.
    
-Si vous connecter avec l'utilisateur admin vous pouvez acceder a l'url /admin pour voir les comptes utilisateurs, et vous pouvez changer les niveaux d'accés si vous cliquer sur l'image  (croix ou valider).
+Si vous connecter avec l'utilisateur admin vous pouvez accéder a l'url /admin pour voir les comptes utilisateurs, et vous pouvez changer les niveaux d'accés si vous cliquer sur l'image  (croix ou valider).
 
 *L'admin* ( **login : admin / Mot de passe : 12345** ) a le droit de modifier/supprimer/ajouter les événements de tout le monde.
