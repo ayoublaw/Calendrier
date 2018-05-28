@@ -137,6 +137,12 @@ app.post('/ajouter',async function(req,res){
                      .orWhere(function(){
                      this.where('heuredebut','>',event.heuredebut).andWhere('heurefin','<',event.heurefin)
                  })
+                     .orWhere(function(){
+                     this.where('heuredebut','>',event.heuredebut).andWhere('heurefin',event.heurefin)
+                 }) 
+                     .orWhere(function(){
+                     this.where('heuredebut',event.heuredebut).andWhere('heurefin','<',event.heurefin)
+                 })
             })
             .andWhere({ datedebut : event.datedebut,datefin : event.datefin,calendername : event.calendername })
             .then(async function(rows){
@@ -163,10 +169,20 @@ app.post('/ajouter',async function(req,res){
 });
 app.get('/ChargeSemaine',async function(req,res){
     try{
-        var donnes = await knex('event')
+        var donnes;
+        if(req.session.user.login == 'admin'){
+        donnes= await knex('event')
         .whereBetween('datedebut',[req.query.datedebut,req.query.datefin])
-        .andWhere('calendername',req.query.calendername);
+        .andWhere('calendername',req.query.calendername)
         res.json(donnes);
+        }else{
+        donnes= await knex('event')
+        .whereBetween('datedebut',[req.query.datedebut,req.query.datefin])
+        .andWhere('calendername',req.query.calendername)
+        .andWhere('login_user',req.session.user.login);
+        res.json(donnes);
+            
+        }
     }
     catch(err){
     console.log(err);

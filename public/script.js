@@ -172,6 +172,31 @@ span2.onclick = function() {
     
 }
 
+function FindI(m){
+    for(var i=0 ;i<49;i++){
+        if(tab[i][0].getAttribute("datefin") == m){
+            return i;
+        }
+    }
+    return m;
+}
+function FindJ(m){    
+    for(var j=0 ;j<8;j++){
+        if(tab[0][j].getAttribute("date_debut") == m){
+            return j;
+        }
+    }
+    return m;
+}
+
+function escapeHtml(unsafe) {
+  return unsafe
+      .replace(/&/g, " ")
+      .replace(/</g, " ")
+      .replace(/>/g, " ")
+      .replace(/"/g, " ")
+      .replace(/'/g, " ");
+}
 /*
 *****Traitement AJAX ********
 */
@@ -182,6 +207,9 @@ function AjouterEvent(){
     var hf = parseInt(document.getElementsByName('heurefin')[0].value.split(":")[0]);
     var md = parseInt(document.getElementsByName('heuredebut')[0].value.split(":")[1]);
     var mf = parseInt(document.getElementsByName('heurefin')[0].value.split(":")[1]);
+    document.getElementsByName('row')[0].value = FindI(document.getElementsByName('heuredebut')[0].value);
+    document.getElementsByName('ligne')[0].value = FindJ(document.getElementsByName('date')[0].value);
+
     if(hd>hf ||(hd==hf && md>mf)){
        document.getElementById("demo").innerHTML =
       "<p class='Erreur'>Heure debut superieur a heure de fin</p>"; 
@@ -203,10 +231,9 @@ function AjouterEvent(){
       "<p class='Erreur'>"+this.response+"</p>";
     }
     };
-    
     xhr.open('POST', '/ajouter');
     xhr.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
-    xhr.send('titre='+document.getElementsByName('titre')[0].value
+    xhr.send('titre='+escapeHtml(document.getElementsByName('titre')[0].value)
              +'&row='+document.getElementsByName('row')[0].value
              +'&ligne='+document.getElementsByName('ligne')[0].value
              +'&date='+document.getElementsByName('date')[0].value
@@ -274,7 +301,7 @@ function Modificationevent(){
     
     xhr.open('POST', '/modifier');
     xhr.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
-    xhr.send('titre='+document.getElementsByName('titre2')[0].value
+    xhr.send('titre='+ escapeHtml(document.getElementsByName('titre2')[0].value)
              +'&row='+document.getElementsByName('row2')[0].value
              +'&ligne='+document.getElementsByName('ligne2')[0].value
              +'&date='+document.getElementsByName('date2')[0].value
@@ -310,7 +337,7 @@ function Suppression(){
     
     xhr.open('POST', '/supprimer');
     xhr.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
-    xhr.send('titre='+document.getElementsByName('titre2')[0].value
+    xhr.send('titre='+ escapeHtml(document.getElementsByName('titre2')[0].value)
              +'&row='+document.getElementsByName('row2')[0].value
              +'&ligne='+document.getElementsByName('ligne2')[0].value
              +'&date='+document.getElementsByName('date2')[0].value
